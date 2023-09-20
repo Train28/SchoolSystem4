@@ -6,9 +6,7 @@ import view.View;
 public class AlumnoController {
 	
 	AlumnoManagement alm = new AlumnoManagement();
-	View vista = new View();
-	
-	
+	View vista = new View();	
 	
 	public void insert(int id, String name, String address, int age, double pension) {	
 		

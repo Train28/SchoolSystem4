@@ -21,6 +21,7 @@ public class SubjectController {
 	}
 
 	public void select() {
+	
 		subm.selectSubject();
 
 	}

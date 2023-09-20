@@ -16,11 +16,13 @@ public class ClaseController {
 	}
 
 	public void delete(int id) {
+		
 		clm.delete(id);
 		vista.borrar();
 	}
 
 	public void select() {
+		
 		clm.select();
 
 	}
