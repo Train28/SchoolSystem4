@@ -6,12 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import config.Conexion;
+import controller.AlumnoController;
 
 public class AlumnoManagement {
 	
 	Conexion con = new Conexion();
 	Connection conn = con.getConexion();
-	
+	public ArrayList<Alumno> arraryalum= new ArrayList<>();
+
 	
 
 	
@@ -29,6 +31,9 @@ public class AlumnoManagement {
 			stmt.setInt(4, al.getAge());
 			stmt.setDouble(5, al.getPension());
 			stmt.execute();
+			stmt.close();
+			
+			
 		} catch (Exception e) {
 			System.out.println("Error :"+e);
 		}
@@ -42,6 +47,8 @@ public class AlumnoManagement {
 			String sql = "delete from student where id_student ="+id;
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.execute();
+			stmt.close();
+
 		} catch (Exception e) {
 			System.out.println("Error :" + e);
 		}
@@ -59,11 +66,15 @@ public class AlumnoManagement {
 				String address = rs.getString("address");
 				int age = rs.getInt("age_student");
 				double pension = rs.getInt("pension");				
-				System.out.println(id + "/ " + name + "/ " + address + "/ " + age + "/ " + pension);
+				arraryalum.add(new Alumno(id, name, address, age, pension));
 			}
+			stmt.close();
+
 		} catch (Exception e) {
 			System.out.println("Error " + e);
 		}		
+		
+		
 	}
 
 	

@@ -111,6 +111,7 @@ public class View {
 				break;
 			case 2:
 				alm.select();
+							
 				break;
 			case 3:
 				System.out.println("Enter Id Number");

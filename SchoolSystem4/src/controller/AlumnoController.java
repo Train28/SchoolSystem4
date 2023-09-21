@@ -1,5 +1,8 @@
 package controller;
 
+import java.util.ArrayList;
+
+import model.Alumno;
 import model.AlumnoManagement;
 import view.View;
 
@@ -7,6 +10,7 @@ public class AlumnoController {
 	
 	AlumnoManagement alm = new AlumnoManagement();
 	View vista = new View();	
+
 	
 	public void insert(int id, String name, String address, int age, double pension) {	
 		
@@ -22,6 +26,8 @@ public class AlumnoController {
 	
 	public void select() {
 		alm.select();
-		
+		for (Alumno alumno : alm.arraryalum) {
+			System.out.println(alumno.getDni());
+		}
 	}
 }

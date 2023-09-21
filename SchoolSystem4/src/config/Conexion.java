@@ -1,7 +1,6 @@
 package config;
 
 import java.sql.*;
-//Holahh
 
 public class Conexion {
 
